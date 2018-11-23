@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
@@ -12,8 +13,13 @@ public class HelloWordJavaFx extends Application{
         launch();
     }
     
+    String musica = getClass().getResource("Legendado.mp3").toString();
+    
     @Override
     public void start(Stage palco){
+        //trilha sonora
+        AudioClip clip = new AudioClip(musica);
+        clip.play();
         //personagem
         Rectangle ceu = new Rectangle (900, 450, Color.DARKORANGE);
         Rectangle mar = new Rectangle(900, 450, Color.DODGERBLUE);
